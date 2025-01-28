@@ -6,7 +6,7 @@ function Projects() {
     {
       title: "Portfolio Website",
       description: "A personal portfolio website showcasing my skills, experience, and projects.",
-      link: "https://yourportfolio.com",
+      link: "https://Bharathreddy-kalva.github.io/BharathPortfolio",
     },
     {
       title: "Machine Learning Model",
