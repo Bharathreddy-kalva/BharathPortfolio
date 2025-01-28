@@ -1,0 +1,151 @@
+/* Ensure the app takes the full height of the viewport */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden; /* Prevent scrollbars from animation */
+}
+
+/* Background container for the stars effect */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure it stays behind all content */
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+/* Set background image */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7; /* Adjust transparency if needed */
+}
+
+/* Stars container for 3D effect */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotateStars 60s linear infinite;
+}
+
+/* Individual star styling */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  animation: twinkle 2s infinite alternate;
+}
+
+/* Background rotation animation */
+@keyframes rotateStars {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+/* Twinkling effect for stars */
+@keyframes twinkle {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Content container to push the footer to the bottom */
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  z-index: 1; /* Ensure it stays above the background */
+}
+
+/* Home screen styling */
+.home-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  z-index: 1; /* Ensure it stays above the background */
+  height: 100vh; /* Ensure home-section takes full height */
+  width: 100%; /* Ensure home-section takes full width */
+  box-sizing: border-box; /* Avoid any padding/border overflow */
+}
+
+/* Text styling */
+.home-title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: black;
+  margin: 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.home-subtitle {
+  font-size: 1.5rem;
+  color:black;
+  margin: 0.5rem 0 2rem;
+}
+
+/* Profile Picture */
+.profile-pic {
+  width: 200px !important;  /* Increased size with !important to override any conflicting styles */
+  height: 200px !important; /* Increased size with !important */
+  border-radius: 50%;       /* Keeps it circular */
+  object-fit: cover;        /* Ensures image fits inside the circle */
+  border: 2px solid white;  /* Optional: Adds a border */
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Optional: Glow effect */
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1);    /* Slight zoom effect on hover */
+}
+
+/* Navbar Profile Styling */
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  padding: 20px; /* Ensure there's enough space around the image */
+  width: 100%;   /* Ensure the container spans full width */
+  box-sizing: border-box;
+}
+
+/* Footer always at the bottom */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

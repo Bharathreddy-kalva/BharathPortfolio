@@ -1,0 +1,20 @@
+/* src/components/SocialLinks.css */
+.social-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .social-links a {
+    color: #000;
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: #0073b1; /* LinkedIn Blue */
+  }
+  .social-links a:nth-child(1):hover {
+    color: #333; /* GitHub color */
+  }
+  
